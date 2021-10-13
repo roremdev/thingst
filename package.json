@@ -1,6 +1,6 @@
 {
     "name": "thingst",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A little store of things ✨",
     "main": "src/index.js",
     "scripts": {
@@ -10,7 +10,7 @@
         "husky:init": "npm run husky:clean && husky install && npm run husky:lint && npm run husky:format",
         "init": "npm install && npm run husky:init",
         "serve": "babel-node ./src/index",
-        "dev": "pm2-dev start npm -- run serve ./src/index.js",
+        "dev": "pm2-dev start npm -- run serve",
         "test": "NODE_ENV=test jest test/index.test.js --forceExit",
         "prebuild": "rm -rf ./dist",
         "build": "babel ./src -d ./dist --ignore node_modules,test",
