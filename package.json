@@ -1,11 +1,11 @@
 {
     "name": "thingst",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "A little store of things ✨",
     "main": "src/index.js",
     "scripts": {
         "husky:clean": "rm -rf .husky",
-        "husky:lint": "npx husky add .husky/prepare-commit-msg 'npx --no-install commitlint --edit'",
+        "husky:lint": "npx husky add .husky/prepare-commit-msg 'npx --no-install commitlint --edit \"$1\"'",
         "husky:format": "npx husky add .husky/prepare-commit-msg 'npx devmoji -e --lint'",
         "husky:init": "npm run husky:clean && husky install && npm run husky:lint && npm run husky:format",
         "init": "npm install && npm run husky:init",
@@ -57,7 +57,6 @@
         "extends": [
             "@commitlint/config-conventional"
         ],
-        "parserPreset": "conventional-changelog-conventionalcommits",
         "rules": {
             "type-case": [
                 2,
@@ -67,24 +66,6 @@
             "type-empty": [
                 2,
                 "never"
-            ],
-            "type-enum": [
-                2,
-                "always",
-                [
-                    "feat",
-                    "fix",
-                    "docs",
-                    "style",
-                    "refac",
-                    "test",
-                    "init",
-                    "ci",
-                    "work",
-                    "chore",
-                    "delete",
-                    "format"
-                ]
             ],
             "scope-empty": [
                 0
