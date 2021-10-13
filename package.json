@@ -1,14 +1,14 @@
 {
-    "name": "template-node-backend",
-    "version": "1.0.1",
-    "description": "Template generator for backend apps ✨",
+    "name": "thingst",
+    "version": "0.1.0",
+    "description": "A little store of things ✨",
     "main": "src/index.js",
     "scripts": {
         "husky:clean": "rm -rf .husky",
         "husky:lint": "npx husky add .husky/prepare-commit-msg 'npx --no-install commitlint --edit'",
         "husky:format": "npx husky add .husky/prepare-commit-msg 'npx devmoji -e --lint'",
         "husky:init": "npm run husky:clean && husky install && npm run husky:lint && npm run husky:format",
-        "init": "npm run husky:init && npm run install",
+        "init": "npm install && npm run husky:init",
         "serve": "babel-node ./src/index",
         "dev": "pm2-dev start npm -- run serve ./src/index.js",
         "test": "NODE_ENV=test jest test/index.test.js --forceExit",
