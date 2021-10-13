@@ -8,3 +8,6 @@ dist/
 
 # macos
 .DS_Store
+
+# docker
+db/
