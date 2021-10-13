@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Global debugger",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/index.js",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
+            "envFile": "${workspaceFolder}/config/.env.dev"
+        },
+        {
+            "name": "Unit debugger",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/services/Resource.js",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
+            "envFile": "${workspaceFolder}/config/.env.dev"
+        },
+        {
+            "name": "Jest debugger",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "test"]
+        }
+    ]
+}
