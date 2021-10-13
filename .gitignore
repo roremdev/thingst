@@ -5,3 +5,6 @@ dist/
 
 # git
 .husky
+
+# macos
+.DS_Store
