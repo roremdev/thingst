@@ -1,4 +1,6 @@
 import express from 'express';
+import { info } from '../utils/Log';
+import { success } from '../middlewares/Responses';
 
 const router = express.Router();
 
@@ -10,7 +12,8 @@ const router = express.Router();
  * @returns {string}
  */
 router.get('/', (_, res) => {
-    res.status(200).json({ message: 'Hello World!!' });
+    info('GET /');
+    success(res, 'Hello World!!');
 });
 
 export default router;

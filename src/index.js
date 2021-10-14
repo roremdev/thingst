@@ -1,4 +1,5 @@
 import express from 'express';
+import { listen } from './utils/Log';
 import config from './config/config';
 import { error } from './middlewares/Responses';
 import index from './routes/index';
@@ -13,5 +14,5 @@ app.use('/task', task);
 app.use(error);
 
 if (mode !== 'test')
-    app.listen(port, () => console.log(`Server ${mode} ${port}`));
+    app.listen(port, () => listen(`⬢ Server Thingst - ${mode}`));
 export default app;

@@ -1,11 +1,4 @@
-// import * as Sentry from '@sentry/node';
-// const { mode, sentryDns } = config;
-// Sentry.init({
-//     dsn: sentryDns,
-//     environment: mode,
-//     tracesSampleRate: 1.0
-// });
-// Sentry.captureException(err);
+import { fail, complete } from '../utils/Log';
 
 /**
  * handler response for error events
@@ -15,8 +8,8 @@
  * @param {Object} next - next function
  */
 export const error = (err, req, res, next) => {
-    const { code, message } = err;
-
+    const { code, error, message } = err;
+    fail('Bad operation', error, message);
     res.status(code).json({});
 };
 
@@ -27,5 +20,6 @@ export const error = (err, req, res, next) => {
  * @param {number} code - code of response
  */
 export const success = (res, data, code) => {
+    complete('Success operation', code || 200);
     res.status(code || 200).json({ data });
 };
