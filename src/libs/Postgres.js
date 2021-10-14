@@ -1,5 +1,5 @@
-// TODO: @throws {ErrorObject} - error to get resource
 import { Pool as PostgresClient } from 'pg';
+import Error from '../utils/Error';
 
 export default class Postgres {
     /**
@@ -8,15 +8,9 @@ export default class Postgres {
      * @returns {object} - connection client
      */
     async #connect() {
-        try {
-            if (!Postgres.connection) {
-                Postgres.connection = new PostgresClient();
-                console.log('Connected succesfully');
-            }
-            return Postgres.connection;
-        } catch (error) {
-            console.log(error);
-        }
+        return !Postgres.connection
+            ? (Postgres.connection = new PostgresClient())
+            : Postgres.connection;
     }
     /**
      * @description query process in table
@@ -27,8 +21,8 @@ export default class Postgres {
         try {
             const db = await this.#connect();
             return await db.query(request);
-        } catch (error) {
-            console.log(error);
+        } catch ({ message }) {
+            throw new Error(message, 'DRIVER');
         }
     }
 }
