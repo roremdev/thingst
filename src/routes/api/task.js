@@ -1,4 +1,5 @@
 import express from 'express';
+import { success } from '../../middlewares/Responses';
 import Resource from '../../services/Resource';
 
 const router = express.Router();
@@ -13,11 +14,7 @@ const taskService = new Resource('tasks');
 router.get('/', async (req, res, next) => {
     try {
         const data = await taskService.findAll();
-        res.status(200).json({
-            status: 'success',
-            data,
-            message: 'Retrieved all tasks',
-        });
+        success(res, data);
     } catch (error) {
         next(error);
     }
