@@ -12,7 +12,7 @@
             "name": "Unit debugger",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/src/services/Resource.js",
+            "program": "${workspaceFolder}/src/utils/Log.js",
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
             "envFile": "${workspaceFolder}/src/config/.env"
         },

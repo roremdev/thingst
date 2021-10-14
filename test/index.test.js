@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 
-import app from '../index';
+import app from '../src/index';
 
 const request = supertest(app);
 
@@ -17,7 +17,7 @@ describe('routes', () => {
         it('should respond with a json', async () => {
             const { status, body: response } = await request.get('/');
             expect(status).toBe(200);
-            expect(typeof response.message).toBe('string');
+            expect(typeof response.data).toBe('string');
         });
     });
 });
