@@ -3,18 +3,10 @@ services:
         image: postgres
         restart: always
         ports:
-<<<<<<< HEAD
             - '5432:5432'
         environment:
             POSTGRES_DB: ${PGDATABASE}
             POSTGRES_USER: ${PGUSER}
             POSTGRES_PASSWORD: ${PGPASSWORD}
-=======
-            - 5432
-        environment:
-            POSTGRES_DB: ${DB_NAME}
-            POSTGRES_USER: ${DB_USER}
-            POSTGRES_PASSWORD: ${DB_PASSWORD}
->>>>>>> 88bee9878636286250d3a2b9426474cd8b17d0f2
         volumes:
             - ./db:/var/lib/postgresql/data
