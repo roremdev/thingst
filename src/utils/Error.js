@@ -15,6 +15,10 @@ export default class ServerError extends Error {
             code: 500,
             message: 'Service Unavailable',
         },
+        DEFINITION: {
+            code: 501,
+            message: 'No Synchronization',
+        },
     };
     /**
      * @constructor
