@@ -41,4 +41,18 @@ export default class Sequelize {
             throw error;
         }
     }
+    /**
+     * @description migration builder object
+     */
+    static migration() {
+        return {
+            development: {
+                username: database.dbUser,
+                password: database.dbPassword,
+                database: database.dbName,
+                host: database.dbHost,
+                dialect: 'postgres',
+            },
+        };
+    }
 }
