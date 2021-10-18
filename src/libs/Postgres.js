@@ -15,12 +15,13 @@ export default class Postgres {
     /**
      * @description query process in table
      * @param {string} request - SQL string request
-     * @returns {Object} - response query postgresDB
+     * @returns {array} - response query postgresDB
      */
     async query(request) {
         try {
             const db = await this.#connect();
-            return await db.query(request);
+            const { rows } = await db.query(request);
+            return rows;
         } catch ({ message }) {
             throw new Error(message, 'DRIVER');
         }

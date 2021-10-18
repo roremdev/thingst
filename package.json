@@ -1,6 +1,6 @@
 {
     "name": "thingst",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "A little store of things ✨",
     "main": "src/index.js",
     "scripts": {
@@ -131,6 +131,7 @@
         "chalk": "^4.1.2",
         "express": "^4.17.1",
         "pg": "^8.7.1",
+        "pg-format": "^1.0.4",
         "pm2": "^5.1.2"
     }
 }
