@@ -26,24 +26,16 @@ export default {
         allowNull: false,
         type: DataTypes.STRING,
     },
-<<<<<<< HEAD
-    role: {
-        allowNull: false,
-        type: DataTypes.STRING,
-        defaultValue: 'customer',
-    },
-=======
->>>>>>> 216b14b847287c04da2c54f6efd683f825c8c97a
     createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'created_at',
-        defaultValue: SequelizeClient.DATE,
+        defaultValue: SequelizeClient.NOW,
     },
     updatedAt: {
         allowNull: false,
         type: DataTypes.DATE,
         field: 'updated_at',
-        defaultValue: SequelizeClient.DATE,
+        defaultValue: SequelizeClient.NOW,
     },
 };

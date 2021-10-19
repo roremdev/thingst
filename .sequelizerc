@@ -3,4 +3,5 @@ require('@babel/register');
 module.exports = {
     config: './src/mocks/config.js',
     'migrations-path': './src/mocks/migrations',
+    'seeders-path': './src/mocks/seeders',
 };
