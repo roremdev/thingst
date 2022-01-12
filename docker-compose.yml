@@ -1,12 +1,15 @@
 services:
-    wordpress:
+    postgres:
+        container_name: postgres
         image: postgres
         restart: always
         ports:
-            - 5432
+            - ${DB_PORT}:5432
+        expose:
+            - '5432'
         environment:
-            POSTGRES_DB: ${DB_NAME}
             POSTGRES_USER: ${DB_USER}
             POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_DB: ${DB_DATABASE}
         volumes:
-            - ./db:/var/lib/postgresql/data
+            - ./docker:/var/lib/postgresql/data
