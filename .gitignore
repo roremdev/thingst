@@ -2,12 +2,9 @@
 node_modules/
 dist/
 .env
-
 # git
 .husky
-
-# macos
+# os
 .DS_Store
-
 # docker
-db/
+docker/

@@ -2,20 +2,45 @@
     "name": "thingst",
     "version": "0.4.0",
     "description": "A little store of things ✨",
-    "main": "src/index.js",
+    "main": "src/index.ts",
     "scripts": {
-        "husky:clean": "rm -rf .husky",
-        "husky:lint": "npx husky add .husky/prepare-commit-msg 'npx --no-install commitlint --edit \"$1\"'",
-        "husky:format": "npx husky add .husky/prepare-commit-msg 'npx devmoji -e --lint'",
-        "husky:init": "npm run husky:clean && husky install && npm run husky:lint && npm run husky:format",
-        "init": "npm install && npm run husky:init",
-        "serve": "babel-node ./src/index",
-        "dev": "pm2-dev start npm -- run serve",
-        "test": "NODE_ENV=test jest test/index.test.js --forceExit",
-        "prebuild": "rm -rf ./dist",
-        "build": "babel ./src -d ./dist --ignore node_modules,test",
-        "preinstall": "npm install pm2",
-        "start": "pm2-runtime start ./dist/index.js"
+        "doc": "docsify serve ./docs --port 3001",
+        "test": "jest",
+        "dev": "nodemon ./src/index",
+        "prebuild": "rm -rf dist",
+        "build": "tsc",
+        "prestart": "npm ci",
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "@prisma/client": "3.7.0",
+        "cors": "2.8.5",
+        "docsify": "4.12.1",
+        "express": "4.17.1",
+        "joi": "17.4.2",
+        "module-alias": "2.2.2",
+        "swagger-jsdoc": "6.1.0",
+        "swagger-ui-express": "4.2.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "16.0.0",
+        "@commitlint/config-conventional": "16.0.0",
+        "@types/cors": "2.8.12",
+        "@types/express": "4.17.13",
+        "@types/jest": "27.0.3",
+        "@types/node": "16.11.11",
+        "@types/supertest": "2.0.11",
+        "@types/swagger-jsdoc": "6.0.1",
+        "@types/swagger-ui-express": "4.1.3",
+        "dotenv": "10.0.0",
+        "dotenv-expand": "5.1.0",
+        "husky": "7.0.4",
+        "jest": "27.4.3",
+        "nodemon": "2.0.15",
+        "prisma": "3.7.0",
+        "supertest": "6.1.6",
+        "ts-jest": "27.1.0",
+        "ts-node": "10.4.0"
     },
     "repository": {
         "type": "git",
@@ -23,7 +48,11 @@
     },
     "keywords": [
         "NodeJS",
-        "ExpressJS"
+        "ExpressJS",
+        "TypeScript",
+        "Docker",
+        "Prisma",
+        "PostgreSQL"
     ],
     "author": "@roremDev",
     "license": "MIT",
@@ -53,83 +82,38 @@
     "engines": {
         "node": "14.x"
     },
-    "commitlint": {
-        "extends": [
-            "@commitlint/config-conventional"
-        ],
-        "rules": {
-            "type-case": [
-                2,
-                "always",
-                "lower-case"
-            ],
-            "type-empty": [
-                2,
-                "never"
-            ],
-            "scope-empty": [
-                0
-            ],
-            "subject-case": [
-                2,
-                "always",
-                "lower-case"
-            ],
-            "subject-empty": [
-                2,
-                "never"
-            ],
-            "subject-full-stop": [
-                2,
-                "never",
-                "."
-            ]
-        }
-    },
-    "eslintConfig": {
-        "parserOptions": {
-            "ecmaVersion": 2020
-        },
-        "extends": [
-            "eslint:recommended"
-        ],
-        "env": {
-            "es6": true,
-            "node": true
-        },
-        "rules": {
-            "no-console": "off"
-        }
-    },
     "prettier": {
         "tabWidth": 4,
         "semi": true,
         "singleQuote": true
     },
-    "babel": {
-        "presets": [
-            "@babel/preset-env"
+    "_moduleAliases": {
+        "@src": "./src",
+        "@config": "./src/config",
+        "@controllers": "./src/controllers",
+        "@middlewares": "./src/middlewares",
+        "@routes": "./src/routes",
+        "@utils": "./src/utils",
+        "@validators": "./src/validators"
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "testPathIgnorePatterns": [
+            "<rootDir>/dist/"
         ],
-        "plugins": [
-            "@babel/plugin-transform-runtime"
-        ]
+        "moduleNameMapper": {
+            "@src/(.*)": "<rootDir>/src/$1",
+            "@config/(.*)": "<rootDir>/src/config/$1",
+            "@controllers/(.*)": "<rootDir>/src/controllers/$1",
+            "@middlewares/(.*)": "<rootDir>/src/middlewares/$1",
+            "@routes/(.*)": "<rootDir>/src/routes/$1",
+            "@utils/(.*)": "<rootDir>/src/utils/$1",
+            "@validators/(.*)": "<rootDir>/src/validators/$1"
+        }
     },
-    "devDependencies": {
-        "@babel/cli": "^7.15.7",
-        "@babel/core": "^7.15.5",
-        "@babel/node": "^7.15.8",
-        "@babel/plugin-transform-runtime": "^7.15.8",
-        "@babel/preset-env": "^7.15.8",
-        "@commitlint/cli": "^13.2.1",
-        "@commitlint/config-conventional": "^13.2.0",
-        "dotenv": "^10.0.0",
-        "husky": "^7.0.2",
-        "jest": "^27.2.4",
-        "supertest": "^6.1.6"
-    },
-    "dependencies": {
-        "@babel/runtime": "^7.15.4",
-        "express": "^4.17.1",
-        "pm2": "^5.1.2"
+    "prisma": {
+        "schema": "./prisma/schema.prisma",
+        "seed": "babel-node ./prisma/seed.js"
     }
 }

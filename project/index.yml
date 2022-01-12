@@ -1,0 +1,26 @@
+tags:
+    - name: Index
+      description: API root path.
+
+paths:
+    /:
+        get:
+            description: Root request operation
+            tags: [Index]
+            responses:
+                200:
+                    description: Send a single response
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    project:
+                                        type: string
+                                        example: Description
+                                    mode:
+                                        type: string
+                                        example: development
+                                    version:
+                                        type: string
+                                        example: 0.0.0
