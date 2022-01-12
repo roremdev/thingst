@@ -2,7 +2,7 @@
     <img src="docs/logo.svg" alt="Logo" width="280">
 </p>
 <p align="center">
-    <img src="https://img.shields.io/badge/version-0.2.0-EBCB8B?style=for-the-badge&logo=node.js&logoColor=EBCB8B" alt="JavaScript" />
+    <img src="https://img.shields.io/badge/dynamic/json?color=EBCB8B&style=for-the-badge&label=version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Froremdev%2Fthingst%2Fmaster%2Fpackage.json" alt="Version" />
 </p>
 
 <p align="center">

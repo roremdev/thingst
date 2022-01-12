@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/dynamic/json?color=EBCB8B&style=for-the-badge&label=version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Froremdev%2Fthingst%2Fmaster%2Fpackage.json" alt="JavaScript" />
+    <img src="https://img.shields.io/badge/dynamic/json?color=EBCB8B&style=for-the-badge&label=version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Froremdev%2Fthingst%2Fmaster%2Fpackage.json" alt="Version" />
 </p>
 
 ### ✨About The Project
