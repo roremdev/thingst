@@ -15,11 +15,13 @@
             "@src/*": ["./src/*"],
             "@config/*": ["./src/config/*"],
             "@controllers/*": ["./src/controllers/*"],
+            "@db/*": ["./src/db/*"],
             "@middlewares/*": ["./src/middlewares/*"],
+            "@models/*": ["./src/graphql/models/*"],
             "@routes/*": ["./src/routes/*"],
             "@utils/*": ["./src/utils/*"],
             "@validators/*": ["./src/validators/*"]
         }
     },
-    "exclude": ["test/**/*.test.ts"]
+    "include": ["./src/**/*"]
 }

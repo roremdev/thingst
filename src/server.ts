@@ -1,8 +1,7 @@
 import { ApolloServer } from 'apollo-server'
 
-import typeDefs from './graphql/models'
-import resolvers from './graphql/controllers'
+import schema from './graphql/index'
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({ schema, debug: false })
 
 export default server

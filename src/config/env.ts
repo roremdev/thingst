@@ -4,8 +4,8 @@ import dotenvExpand from 'dotenv-expand'
 const env = dotenv.config()
 dotenvExpand(env)
 
-export const port = process.env.PORT
-export const mode = process.env.MODE
+export const PORT = process.env.PORT
+export const MODE = process.env.MODE
 export const DOMAIN = process.env.DOMAIN
 
 export const SERVER_URL = process.env.SERVER_URL

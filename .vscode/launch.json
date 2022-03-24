@@ -1,12 +1,11 @@
 {
     "configurations": [
         {
-            "name": "Global debugger",
+            "name": "Debugger",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/index.js",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
-            "envFile": "${workspaceFolder}/config/.env.dev"
+            "runtimeExecutable": "doppler",
+            "runtimeArgs": ["run", "--", "npm", "run", "dev"]
         },
         {
             "name": "Unit debugger",
