@@ -1,0 +1,37 @@
+model Order {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+
+    directionId Int
+    direction   Direction @relation(fields: [directionId], references: [id])
+
+    products Product[]
+
+    paymentStatus     PaymentStatus     @default(Waiting)
+    fulfillmentStatus FulfillmentStatus @default(None)
+
+    @@map("order")
+}
+
+model Product {
+    id     Int     @id
+    orders Order[]
+}
+
+model Direction {
+    id     Int     @id
+    orders Order[]
+}
+
+enum PaymentStatus {
+    Waiting
+    Paid
+    Rejected
+}
+
+enum FulfillmentStatus {
+    None
+    Preparing
+    Delivering
+    Fulfilled
+}

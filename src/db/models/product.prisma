@@ -1,0 +1,17 @@
+model Product {
+    id       Int     @id @default(autoincrement())
+    name     String
+    price    Decimal
+    quantity Int
+    image    String
+
+    categoryId Int
+    category   Category @relation(fields: [categoryId], references: [id])
+
+    @@map("product")
+}
+
+model Category {
+    id       Int       @id
+    products Product[]
+}

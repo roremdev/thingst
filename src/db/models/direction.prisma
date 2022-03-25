@@ -1,0 +1,20 @@
+model Direction {
+    id        Int     @id @default(autoincrement())
+    firstName String
+    LastName  String
+    address   String
+    city      String
+    country   String
+    zipCode   String
+    isDefault Boolean @default(true)
+
+    accountId Int
+    account   Account @relation(fields: [accountId], references: [id])
+
+    @@map("direction")
+}
+
+model Account {
+    id         Int         @id
+    directions Direction[]
+}

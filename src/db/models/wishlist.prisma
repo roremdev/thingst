@@ -1,0 +1,18 @@
+model WishList {
+    id Int @id @default(autoincrement())
+
+    products Product[]
+    accounts Account[]
+
+    @@map("wishList")
+}
+
+model Product {
+    id        Int        @id
+    wishLists WishList[]
+}
+
+model Account {
+    id        Int        @id
+    wishLists WishList[]
+}
