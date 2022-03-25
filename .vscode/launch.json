@@ -11,9 +11,13 @@
             "name": "Unit debugger",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/services/Resource.js",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
-            "envFile": "${workspaceFolder}/config/.env.dev"
+            "runtimeExecutable": "doppler",
+            "runtimeArgs": [
+                "run",
+                "--",
+                "${workspaceFolder}/node_modules/.bin/ts-node",
+                "${workspaceFolder}/debug/index.ts"
+            ]
         },
         {
             "name": "Jest debugger",
