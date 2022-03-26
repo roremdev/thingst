@@ -2,7 +2,7 @@
     "mixers": [
         {
             "input": ["./src/db/models/*.prisma"],
-            "output": "./prisma/schema.prisma"
+            "output": "./src/db/schema.prisma"
         }
     ]
 }

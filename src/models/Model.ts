@@ -1,13 +1,13 @@
 import Error from '@controllers/Error.controller'
 
 export default class Model<TModel, TQuery, TPayload> {
-    findUnique(query: TQuery): TModel | undefined {
+    findUnique(query: TQuery): Promise<TModel> {
         throw new Error('Method not implemented.')
     }
-    findMany(): TModel[] {
+    findMany(): Promise<TModel[]> {
         throw new Error('Method not implemented.')
     }
-    create(payload: TPayload): TModel {
+    create(payload: TPayload): Promise<TModel> {
         throw new Error('Method not implemented.')
     }
 }

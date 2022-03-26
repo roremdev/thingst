@@ -6,7 +6,7 @@ import { ApolloError } from 'apollo-server-errors'
 export default class Error extends ApolloError {
     /**
      * @private
-     * @description dictionary of errors */
+     * @description Dictionary of errors. */
     static #errors: { [key: string]: any } = {
         SERVER: {
             code: 500,
@@ -35,9 +35,9 @@ export default class Error extends ApolloError {
     }
     /**
      * @constructor
-     * @param {string} message Error trace message; as default message SERVER.
-     * @param {string=} type Error type; as default SERVER. */
-    constructor(message?: string, type: string = 'SERVER') {
+     * @param {string=} type Error type; default SERVER.
+     * @param {string} message Error trace message; default message SERVER. */
+    constructor(type: string, message?: string) {
         super(message || Error.#errors[type].message, Error.#errors[type].code)
     }
 }

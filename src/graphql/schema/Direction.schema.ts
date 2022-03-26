@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server'
 
-import { Query, Payload } from './Direction.entity'
+import { Query, Payload } from '@models/Direction/Direction.entity'
 
 export default {
     Schema: gql`

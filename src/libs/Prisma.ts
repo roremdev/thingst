@@ -1,37 +1,49 @@
 import { PrismaClient } from '@prisma/client'
 
-import { fail } from '@utils/logger.util'
-
 /**
  * @class
  * @description Prisma ORM definition handler library */
-export class Prisma {
+export default class Prisma {
     /**
      * @private
-     * @description prisma client reference */
-    private static client: any
-
+     * @description Prisma model name. */
+    #resource: string
     /**
      * @private
-     * @description singleton pattern for pool connection
-     * @returns connection client */
-    static #connect(resource: string) {
-        Prisma.client = new PrismaClient()
-        return Prisma.client[resource]
+     * @description Prisma client reference. */
+    #client: PrismaClient
+    /**
+     * @constructor
+     * @param {string} resource Model name. */
+    constructor(resource: string) {
+        this.#resource = resource
     }
-
     /**
-     * @description find all registers
-     * @param {string} resource - resource name to work
-     * @param {object} options - query options
-     * @throws {ErrorServer}
-     * @returns query response as array */
-    static async findMany(resource: string, options: any): Promise<any> {
-        try {
-            const client = Prisma.#connect(resource)
-            return await client.findMany(options)
-        } catch (error: any) {
-            fail(error.message)
-        }
+     * @description Singleton pattern for pool connection.
+     * @returns Connection to model. */
+    #connect() {
+        if (!this.#client) this.#client = new PrismaClient()
+        return this.#client[this.#resource]
+    }
+    /**
+     * @description Find a register in model.
+     * @param {object} [query] - Optional query object; default: {}
+     * @returns Resultset. */
+    findUnique(query: object = {}) {
+        return this.#connect().findUnique(query)
+    }
+    /**
+     * @description Find all registers in model.
+     * @param {object} [query] - Optional query object; default: {}
+     * @returns Resultset. */
+    findMany(query: object = {}) {
+        return this.#connect().findMany(query)
+    }
+    /**
+     * @description Create a registers in model.
+     * @param {object} payload - Payload object
+     * @returns Resultset. */
+    create(payload: object) {
+        return this.#connect().create(payload)
     }
 }

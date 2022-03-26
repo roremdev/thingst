@@ -104,8 +104,9 @@
         "@config": "./src/config",
         "@controllers": "./src/controllers",
         "@db": "./src/db",
+        "@libs": "./src/libs",
         "@middlewares": "./src/middlewares",
-        "@models": "./src/graphql/models",
+        "@models": "./src/models",
         "@routes": "./src/routes",
         "@utils": "./src/utils",
         "@validators": "./src/validators"
@@ -121,15 +122,16 @@
             "@config/(.*)": "<rootDir>/src/config/$1",
             "@controllers/(.*)": "<rootDir>/src/controllers/$1",
             "@db/(.*)": "<rootDir>/src/db/$1",
+            "@libs/(.*)": "<rootDir>/src/libs/$1",
             "@middlewares/(.*)": "<rootDir>/src/middlewares/$1",
-            "@models/(.*)": "<rootDir>/src/graphql/models/$1",
+            "@models/(.*)": "<rootDir>/src/models/$1",
             "@routes/(.*)": "<rootDir>/src/routes/$1",
             "@utils/(.*)": "<rootDir>/src/utils/$1",
             "@validators/(.*)": "<rootDir>/src/validators/$1"
         }
     },
     "prisma": {
-        "schema": "./prisma/schema.prisma",
-        "seed": "ts-node ./prisma/seed.js"
+        "schema": "./src/db/schema.prisma",
+        "seed": "ts-node ./src/db/index.seed.ts"
     }
 }
