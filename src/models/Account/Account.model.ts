@@ -7,27 +7,27 @@ export default class AccountModel extends Model<Account, Query, Payload> {
     /**
      * @private
      * @description Prisma ORM definition handler library. */
-    #client = new Prisma('Account')
+    private client = new Prisma('account')
     /**
      * @description Find an account by id.
-     * @param {Query} {id} Account ID.
+     * @param {Query} query
      * @returns Account */
-    async findUnique({ id }: Query): Promise<Account> {
-        return await this.#client.findUnique({
-            where: { id },
+    async findUnique(query: Query): Promise<Account> {
+        return await this.client.findUnique({
+            where: query,
         })
     }
     /**
      * @description Find all accounts.
      * @returns {Account[]} Array of accounts. */
     async findMany(): Promise<Account[]> {
-        return await this.#client.findMany()
+        return await this.client.findMany()
     }
     /**
      * @description Create an account.
      * @returns {Account} */
     async create(payload: Payload): Promise<Account> {
-        return await this.#client.create({
+        return await this.client.create({
             data: payload,
         })
     }

@@ -13,7 +13,7 @@
         "db:deploy": "doppler run -- npx prisma migrate deploy",
         "doc": "docsify serve ./docs --port 3001",
         "test": "jest",
-        "dev": "nodemon ./src/index",
+        "dev": "doppler run -- nodemon ./src/index",
         "prebuild": "rm -rf dist",
         "build": "tsc -p tsconfig.build.json",
         "prestart": "npm ci",
