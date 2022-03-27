@@ -7,7 +7,8 @@ export interface Product {
     quantity: number
     image: string
 
-    category: string | Pick<Category, 'name'>
+    category?: string | Pick<Category, 'name'>
+    categoryId?: number
 }
 
 export type Query = Pick<Product, 'id'>

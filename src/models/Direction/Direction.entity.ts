@@ -10,7 +10,8 @@ export interface Direction {
     zipCode: string
     isDefault: boolean
 
-    account: number | Pick<Account, 'id'>
+    account?: number | Pick<Account, 'id'>
+    accountId?: number
 }
 
 export type Query = Pick<Direction, 'id'>

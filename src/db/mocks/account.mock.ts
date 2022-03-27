@@ -1,4 +1,6 @@
-export default [
+import { Account } from '@models/Account/Account.entity'
+
+const accounts: Account[] = [
     {
         id: 1,
         email: 'ejonson0@ifeng.com',
@@ -25,3 +27,5 @@ export default [
         password: 'elTBzXA',
     },
 ]
+
+export default accounts

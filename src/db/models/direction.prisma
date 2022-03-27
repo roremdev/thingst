@@ -1,7 +1,7 @@
 model Direction {
     id        Int     @id @default(autoincrement())
     firstName String
-    LastName  String
+    lastName  String
     address   String
     city      String
     country   String

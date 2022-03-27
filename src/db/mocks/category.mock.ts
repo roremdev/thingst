@@ -1,4 +1,6 @@
-export default [
+import { Category } from '@models/Category/Category.entity'
+
+const categories: Category[] = [
     {
         id: 1,
         name: 'Books',
@@ -20,3 +22,5 @@ export default [
         name: 'Technology',
     },
 ]
+
+export default categories

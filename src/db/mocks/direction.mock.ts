@@ -1,7 +1,8 @@
-export default [
+import { Direction } from '@models/Direction/Direction.entity'
+
+const directions: Direction[] = [
     {
         id: 1,
-        account: 1,
         firstName: 'Philippa',
         lastName: 'Spender',
         address: '836 Bowman Road',
@@ -9,10 +10,10 @@ export default [
         country: 'China',
         zipCode: '76613',
         isDefault: true,
+        accountId: 1,
     },
     {
         id: 2,
-        account: 1,
         firstName: 'Philippa',
         lastName: 'Spender',
         address: '049 Mayer Circle',
@@ -20,10 +21,10 @@ export default [
         country: 'Yemen',
         zipCode: '2190',
         isDefault: false,
+        accountId: 1,
     },
     {
         id: 3,
-        account: 3,
         firstName: 'Rayna',
         lastName: 'Sancroft',
         address: '5085 Beilfuss Lane',
@@ -31,10 +32,10 @@ export default [
         country: 'Central African Republic',
         zipCode: '89197',
         isDefault: false,
+        accountId: 2,
     },
     {
         id: 4,
-        account: 4,
         firstName: 'Hakim',
         lastName: 'Blowick',
         address: '7 4th Terrace',
@@ -42,10 +43,10 @@ export default [
         country: 'China',
         zipCode: '57157',
         isDefault: true,
+        accountId: 3,
     },
     {
         id: 5,
-        account: 5,
         firstName: 'Mirella',
         lastName: 'Suermeier',
         address: '320 Northview Trail',
@@ -53,10 +54,10 @@ export default [
         country: 'Czech Republic',
         zipCode: '51098',
         isDefault: false,
+        accountId: 4,
     },
     {
         id: 6,
-        account: 6,
         firstName: 'Case',
         lastName: 'Giacovetti',
         address: '6974 Forest Dale Parkway',
@@ -64,10 +65,10 @@ export default [
         country: 'Portugal',
         zipCode: '60856',
         isDefault: true,
+        accountId: 5,
     },
     {
         id: 7,
-        account: 6,
         firstName: 'Case',
         lastName: 'Giacovetti',
         address: '4 Thackeray Point',
@@ -75,10 +76,10 @@ export default [
         country: 'Belarus',
         zipCode: '38680',
         isDefault: false,
+        accountId: 5,
     },
     {
         id: 8,
-        account: 8,
         firstName: 'Rici',
         lastName: 'Trewhitt',
         address: '124 Tomscot Road',
@@ -86,5 +87,8 @@ export default [
         country: 'Indonesia',
         zipCode: '19440',
         isDefault: false,
+        accountId: 5,
     },
 ]
+
+export default directions
