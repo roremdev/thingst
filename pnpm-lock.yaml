@@ -20,6 +20,7 @@ specifiers:
   dotenv-expand: 5.1.0
   express: 4.17.1
   graphql: 16.2.0
+  graphql-constraint-directive: 3.0.0
   husky: 7.0.4
   jest: 27.4.3
   joi: 17.4.2
@@ -38,6 +39,7 @@ dependencies:
   '@graphql-tools/schema': 8.3.1_graphql@16.2.0
   '@prisma/client': 3.11.1_prisma@3.11.1
   apollo-server: 3.6.1_graphql@16.2.0
+  apollo-server-errors: 3.3.1_graphql@16.2.0
   cors: 2.8.5
   dayjs: 1.10.7
   docsify: 4.12.1
@@ -45,6 +47,7 @@ dependencies:
   dotenv-expand: 5.1.0
   express: 4.17.1
   graphql: 16.2.0
+  graphql-constraint-directive: 3.0.0_graphql@16.2.0
   joi: 17.4.2
   lodash: 4.17.21
   module-alias: 2.2.2
@@ -58,7 +61,6 @@ devDependencies:
   '@types/lodash': 4.14.178
   '@types/node': 16.11.11
   '@types/supertest': 2.0.11
-  apollo-server-errors: 3.3.1_graphql@16.2.0
   husky: 7.0.4
   jest: 27.4.3_ts-node@10.4.0
   nodemon: 2.0.15
@@ -1668,6 +1670,7 @@ packages:
       graphql: ^15.3.0 || ^16.0.0
     dependencies:
       graphql: 16.2.0
+    dev: false
 
   /apollo-server-express/3.6.5_express@4.17.1+graphql@16.2.0:
     resolution: {integrity: sha512-mV1Dif//BUq1WFlCWfaSlhsuxhcJ/gGD8HdQ6/s3JEspStS7SgmeSUIwJYl3vw8IA/8j7GNg/EINkc57x2UbdA==}
@@ -3285,6 +3288,18 @@ packages:
   /graceful-fs/4.2.9:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
     dev: true
+
+  /graphql-constraint-directive/3.0.0_graphql@16.2.0:
+    resolution: {integrity: sha512-j/f1Ry+ufNx/tU2T7eVltlzLSr6rJ+rktCQSoYg+Fo5tXQ8COSS2TTiB9QNiTNd8rDtgd1J7qInthPy3kgh1ow==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      graphql: '>=14.0.0'
+    dependencies:
+      '@graphql-tools/schema': 8.3.5_graphql@16.2.0
+      '@graphql-tools/utils': 8.6.5_graphql@16.2.0
+      graphql: 16.2.0
+      validator: 13.7.0
+    dev: false
 
   /graphql-tag/2.12.6_graphql@16.2.0:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
@@ -6029,6 +6044,11 @@ packages:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
     dev: true
+
+  /validator/13.7.0:
+    resolution: {integrity: sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /value-or-promise/1.0.11:
     resolution: {integrity: sha512-41BrgH+dIbCFXClcSapVs5M6GkENd3gQOJpEfPDNa71LsUGMXDL0jMWpI/Rh7WhX+Aalfz2TTS3Zt5pUsbnhLg==}

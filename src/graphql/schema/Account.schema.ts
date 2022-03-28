@@ -1,8 +1,7 @@
 import { gql } from 'apollo-server'
-
 import { Query, Payload } from '@models/Account/Account.entity'
-
 import AccountController from '@controllers/Account.contoller'
+
 const accountController = new AccountController()
 
 export default {
@@ -32,8 +31,8 @@ export default {
         },
     },
     Mutation: {
-        createAccount: async (_: any, payload: Payload) => {
-            return accountController.createAccount(payload)
+        createAccount: async (_: any, { account }: { account: Payload }) => {
+            return await accountController.createAccount(account)
         },
     },
 }

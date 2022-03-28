@@ -16,5 +16,5 @@ export const fail = (message: string) => {
  * @description info response ℹ
  * @param {string} message - info message */
 export const info = (message: string) => {
-    console.log(`ℹ ${message}`)
+    console.log(`ℹ Info: ${message}`)
 }
