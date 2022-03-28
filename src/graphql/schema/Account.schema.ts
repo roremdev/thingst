@@ -1,6 +1,8 @@
 import { gql } from 'apollo-server'
+
 import { Query, Payload } from '@models/Account/Account.entity'
 import AccountController from '@controllers/Account.contoller'
+import validate from '@validators/account.validator'
 
 const accountController = new AccountController()
 
@@ -14,7 +16,7 @@ export default {
 
         input CreateAccount {
             email: String!
-            password: String!
+            password: String! @constraint(minLength: 6)
         }
 
         extend type Query {
@@ -32,6 +34,7 @@ export default {
     },
     Mutation: {
         createAccount: async (_: any, { account }: { account: Payload }) => {
+            validate(account)
             return await accountController.createAccount(account)
         },
     },

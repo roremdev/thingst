@@ -33,6 +33,11 @@ const Global = {
         type Mutation {
             createAccount(account: CreateAccount): Account
         }
+
+        directive @constraint(
+            # String constraints
+            minLength: Int
+        ) on INPUT_FIELD_DEFINITION
     `,
     Query: {
         info: () => {
