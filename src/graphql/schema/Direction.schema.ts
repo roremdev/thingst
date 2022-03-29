@@ -6,8 +6,7 @@ export default {
     Schema: gql`
         type Direction {
             id: ID!
-            account: Account!
-            fistName: String!
+            firstName: String!
             lastName: String!
             address: String!
             city: String!
@@ -15,6 +14,7 @@ export default {
             province: String!
             zipCode: String!
             isDefault: Boolean!
+            account: Account!
         }
     `,
 }

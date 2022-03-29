@@ -15,13 +15,16 @@ export default class AccountModel extends Model<Account, Query, Payload> {
     async findUnique(query: Query): Promise<Account> {
         return await this.client.findUnique({
             where: query,
+            include: { directions: true },
         })
     }
     /**
      * @description Find all accounts.
      * @returns {Account[]} Array of accounts. */
     async findMany(): Promise<Account[]> {
-        return await this.client.findMany()
+        return await this.client.findMany({
+            include: { directions: true },
+        })
     }
     /**
      * @description Create an account.

@@ -12,11 +12,12 @@ export default {
             id: ID!
             email: String!
             password: String!
+            directions: [Direction]
         }
 
         input CreateAccount {
             email: String!
-            password: String! @constraint(minLength: 6)
+            password: String!
         }
 
         extend type Query {
