@@ -1,3 +1,5 @@
+import { Filters } from '@libs/Prisma'
+
 export interface Account {
     id: number
     email: string
@@ -6,3 +8,4 @@ export interface Account {
 
 export type Query = Pick<Account, 'id'>
 export type Payload = Pick<Account, 'email' | 'password'>
+export type Filter = Partial<Filters>

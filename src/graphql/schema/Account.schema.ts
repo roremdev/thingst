@@ -1,5 +1,7 @@
 import { gql } from 'apollo-server'
 
+import { Filters } from '@libs/Prisma'
+
 import { Query, Payload } from '@models/Account/Account.entity'
 import AccountController from '@controllers/Account.contoller'
 import validate from '@validators/account.validator'
@@ -20,17 +22,22 @@ export default {
             password: String!
         }
 
+        input FilterAccount {
+            email: String
+            password: String
+        }
+
         extend type Query {
             account(id: ID!): Account!
-            accounts: [Account!]!
+            accounts(skip: Int = 0, take: Int = 10, where: FilterAccount): [Account!]!
         }
     `,
     Query: {
         account: async (_: any, query: Query) => {
             return await accountController.findAccount(query)
         },
-        accounts: async () => {
-            return await accountController.findAccounts()
+        accounts: async (_: any, filters: Filters) => {
+            return await accountController.findAccounts(filters)
         },
     },
     Mutation: {

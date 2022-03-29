@@ -1,9 +1,14 @@
 import Prisma from '@libs/Prisma'
 
 import Model from '@models/Model'
-import { Account, Query, Payload } from './Account.entity'
+import { Account, Query, Payload, Filter } from './Account.entity'
 
-export default class AccountModel extends Model<Account, Query, Payload> {
+export default class AccountModel extends Model<
+    Account,
+    Query,
+    Payload,
+    Filter
+> {
     /**
      * @private
      * @description Prisma ORM definition handler library. */
@@ -21,9 +26,10 @@ export default class AccountModel extends Model<Account, Query, Payload> {
     /**
      * @description Find all accounts.
      * @returns {Account[]} Array of accounts. */
-    async findMany(): Promise<Account[]> {
+    async findMany(filter: Filter): Promise<Account[]> {
         return await this.client.findMany({
             include: { directions: true },
+            ...filter,
         })
     }
     /**

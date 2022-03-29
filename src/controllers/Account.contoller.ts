@@ -1,7 +1,7 @@
 import Error from '@controllers/Error.controller'
 
 import Account from '@models/Account/Account.model'
-import { Query, Payload } from '@models/Account/Account.entity'
+import { Query, Payload, Filter } from '@models/Account/Account.entity'
 
 export default class AccountController {
     private model = new Account()
@@ -19,8 +19,8 @@ export default class AccountController {
     /**
      * @description Find all accounts.
      * @returns Account */
-    async findAccounts() {
-        return await this.model.findMany()
+    async findAccounts(filter: Filter) {
+        return await this.model.findMany(filter)
     }
     /**
      * @description Create an account.

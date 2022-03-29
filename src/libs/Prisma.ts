@@ -1,5 +1,19 @@
 import { PrismaClient } from '@prisma/client'
 
+export interface Filters {
+    skip: number
+    take: number
+    where: {
+        AND?: Array<{
+            [key: string]: any
+        }>
+        OR?: Array<{
+            [key: string]: any
+        }>
+        [key: string]: any
+    }
+}
+
 /**
  * @class
  * @description Prisma ORM definition handler library */
