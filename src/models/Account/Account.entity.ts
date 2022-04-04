@@ -1,11 +1,8 @@
-import { Filters } from '@libs/Prisma'
-
-export interface Account {
+export interface IAccount {
     id: number
     email: string
     password: string
 }
 
-export type Query = Pick<Account, 'id'>
-export type Payload = Pick<Account, 'email' | 'password'>
-export type Filter = Partial<Filters>
+export type Query = Pick<IAccount, 'id'>
+export type Payload = Pick<IAccount, 'email' | 'password'>

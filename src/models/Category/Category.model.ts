@@ -1,18 +1,19 @@
-import Prisma from '@libs/Prisma'
-
+import Error from '@controllers/Error.controller'
 import Model from '@models/Model'
-import { Category, Query, Payload } from './Category.entity'
+import { ICategory, Query, Payload } from './Category.entity'
 
-export default class CategoryModel extends Model<Category, Query, Payload> {
+export default class Category extends Model<ICategory, Query, Payload> {
     /**
-     * @private
-     * @description Prisma ORM definition handler library. */
-    private client = new Prisma('account')
+     * @constructor
+     * @description Generate link to Prisma model. */
+    constructor() {
+        super('category')
+    }
     /**
      * @description Find a category by id.
      * @param {Query} query
      * @returns Category */
-    async findUnique(query: Query): Promise<Category> {
+    async findUnique(query: Query): Promise<ICategory> {
         return await this.client.findUnique({
             where: query,
         })
@@ -20,7 +21,13 @@ export default class CategoryModel extends Model<Category, Query, Payload> {
     /**
      * @description Find pool of categories.
      * @returns {Category[]} Array of categories. */
-    async findMany(): Promise<Category[]> {
+    async findMany(): Promise<ICategory[]> {
         return await this.client.findMany()
+    }
+    /**
+     * @description Create a category.
+     * @returns {Category} */
+    async create(payload: Payload): Promise<ICategory> {
+        throw new Error('Method not implemented.')
     }
 }

@@ -1,10 +1,10 @@
-import { Direction } from '@models/Direction/Direction.entity'
+import { IDirection } from '@models/Direction/Direction.entity'
 import { Product } from '@models/Product/Product.entity'
 
-export interface Order {
+export interface IOrder {
     id: number
     createdAt: string
 
-    direction: Direction
+    direction: IDirection
     products: Product[]
 }

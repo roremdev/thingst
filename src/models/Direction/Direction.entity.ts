@@ -1,6 +1,6 @@
-import { Account } from '@models/Account/Account.entity'
+import { IAccount } from '@models/Account/Account.entity'
 
-export interface Direction {
+export interface IDirection {
     id: number
     firstName: string
     lastName: string
@@ -10,9 +10,9 @@ export interface Direction {
     zipCode: string
     isDefault: boolean
 
-    account?: number | Pick<Account, 'id'>
+    account?: number | Pick<IAccount, 'id'>
     accountId?: number
 }
 
-export type Query = Pick<Direction, 'id'>
-export type Payload = Exclude<Direction, 'account'>
+export type Query = Pick<IDirection, 'id'>
+export type Payload = Exclude<IDirection, 'account'>

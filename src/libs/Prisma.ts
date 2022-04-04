@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 
-export interface Filters {
+export interface IFilters {
     skip: number
     take: number
     where: {
@@ -26,12 +26,14 @@ export default class Prisma {
      * @private
      * @description Prisma client reference. */
     private readonly client: PrismaClient = new PrismaClient()
+
     /**
      * @constructor
      * @param {string} resource Model name. */
     constructor(resource: string) {
         this.resource = resource
     }
+
     /**
      * @description Singleton pattern for pool connection.
      * @returns Connection to model. */
@@ -42,23 +44,26 @@ export default class Prisma {
         if (!model) throw new Error(`Model ${this.resource} not found`)
         return model[1]
     }
+
     /**
      * @description Find a register in model.
-     * @param {object} [query] - Optional query object; default: {}
+     * @param {object} [query] Optional query object; default: {}
      * @returns Result. */
     findUnique(query: object = {}) {
         return this.connect().findUnique(query)
     }
+
     /**
      * @description Find all registers in model.
-     * @param {object} [query] - Optional query object; default: {}
+     * @param {object} [query] Optional query object; default: {}
      * @returns Result. */
     findMany(query: object = {}) {
         return this.connect().findMany(query)
     }
+
     /**
      * @description Create a registers in model.
-     * @param {object} payload - Payload object
+     * @param {object} payload Payload object
      * @returns Result. */
     create(payload: object) {
         return this.connect().create(payload)

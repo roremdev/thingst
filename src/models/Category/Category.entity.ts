@@ -1,7 +1,7 @@
-export interface Category {
+export interface ICategory {
     id: number
     name: string
 }
 
-export type Query = Pick<Category, 'id'>
-export type Payload = Pick<Category, 'name'>
+export type Query = Pick<ICategory, 'id'>
+export type Payload = Pick<ICategory, 'name'>

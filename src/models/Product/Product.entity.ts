@@ -1,15 +1,15 @@
-import { Category } from '@models/Category/Category.entity'
+import { ICategory } from '@models/Category/Category.entity'
 
-export interface Product {
+export interface IProduct {
     id: number
     name: string
     price: number
     quantity: number
     image: string
 
-    category?: string | Pick<Category, 'name'>
+    category?: string | Pick<ICategory, 'name'>
     categoryId?: number
 }
 
-export type Query = Pick<Product, 'id'>
-export type Payload = Exclude<Product, 'category'>
+export type Query = Pick<IProduct, 'id'>
+export type Payload = Exclude<IProduct, 'category'>
