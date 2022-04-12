@@ -1,7 +1,10 @@
-<div style="display: grid; row-gap: 24px; justify-content: center; justify-items: center">
-    <img src="docs/logo.svg" alt="Logo" width="280" />
-    <img width="150" src="https://img.shields.io/badge/dynamic/json?color=EBCB8B&style=for-the-badge&label=version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Froremdev%2Fthingst%2Fmaster%2Fpackage.json" alt="Version" />
-</div>
+<img src="./markdown/favicon.svg" alt="Logo" width="80" height="80" />
+
+# Thingst
+
+![Version](https://img.shields.io/badge/version-0.0.0-EBCB8B?style=for-the-badge&logo=node.js&logoColor=EBCB8B)
+![Node](https://img.shields.io/badge/v14.X-ECEFF4?style=for-the-badge&logo=Node.js)
+![Website](https://img.shields.io/badge/supported-A7C9E6?style=for-the-badge&logo=Typescript)
 
 ### ✨About The Project
 
