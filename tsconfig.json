@@ -15,10 +15,10 @@
             "@src/*": ["./src/*"],
             "@config/*": ["./src/config/*"],
             "@controllers/*": ["./src/controllers/*"],
-            "@db/*": ["src/db/*"],
+            "@db/*": ["./src/db/*"],
             "@libs/*": ["./src/libs/*"],
             "@middlewares/*": ["./src/middlewares/*"],
-            "@models/*": ["src/models/*"],
+            "@models/*": ["./src/models/*"],
             "@routes/*": ["./src/routes/*"],
             "@utils/*": ["./src/utils/*"],
             "@validators/*": ["./src/validators/*"]

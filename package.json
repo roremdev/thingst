@@ -15,6 +15,7 @@
         "test": "jest",
         "dev": "doppler run -- nodemon ./src/index",
         "prebuild": "rm -rf dist",
+        "gcp-build": "npm run build",
         "build": "tsc -p tsconfig.build.json",
         "prestart": "npm ci",
         "start": "node src/index.js"
@@ -100,7 +101,7 @@
         }
     },
     "engines": {
-        "node": "14.x"
+        "node": "16.x"
     },
     "prettier": {
         "tabWidth": 4,

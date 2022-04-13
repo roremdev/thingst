@@ -1,6 +1,6 @@
-import { Account } from '@models/Account/Account.entity'
+import { IAccount } from '@models/Account/Account.entity'
 
-const accounts: Account[] = [
+const accounts: IAccount[] = [
     {
         id: 1,
         email: 'ejonson0@ifeng.com',

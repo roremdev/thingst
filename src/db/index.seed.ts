@@ -2,10 +2,10 @@ import 'module-alias/register'
 import { PrismaClient } from '@prisma/client'
 import { complete, info, fail } from '@utils/logger.util'
 
-import { Account } from '@models/Account/Account.entity'
-import { Category } from '@models/Category/Category.entity'
-import { Direction } from '@models/Direction/Direction.entity'
-import { Product } from '@models/Product/Product.entity'
+import { IAccount } from '@models/Account/Account.entity'
+import { ICategory } from '@models/Category/Category.entity'
+import { IDirection } from '@models/Direction/Direction.entity'
+import { IProduct } from '@models/Product/Product.entity'
 
 import accounts from './mocks/account.mock'
 import categories from './mocks/category.mock'
@@ -30,10 +30,10 @@ async function createBatch<TModel>(name: string, collection: Array<TModel>) {
 }
 
 ;(async () => {
-    await createBatch<Account>('account', accounts)
-    await createBatch<Category>('category', categories)
-    await createBatch<Direction>('direction', directions)
-    await createBatch<Product>('product', products)
+    await createBatch<IAccount>('account', accounts)
+    await createBatch<ICategory>('category', categories)
+    await createBatch<IDirection>('direction', directions)
+    await createBatch<IProduct>('product', products)
 })()
     .then(() => {
         _prisma.$disconnect()

@@ -1,6 +1,6 @@
-import { Product } from '@models/Product/Product.entity'
+import { IProduct } from '@models/Product/Product.entity'
 
-const products: Product[] = [
+const products: IProduct[] = [
     {
         id: 1,
         name: 'Veribet',

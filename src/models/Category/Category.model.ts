@@ -1,4 +1,4 @@
-import Error from '@controllers/Error.controller'
+import ErrorServer from '@controllers/ErrorServer.controller'
 import Model from '@models/Model'
 import { ICategory, Query, Payload } from './Category.entity'
 
@@ -28,6 +28,6 @@ export default class Category extends Model<ICategory, Query, Payload> {
      * @description Create a category.
      * @returns {Category} */
     async create(payload: Payload): Promise<ICategory> {
-        throw new Error('Method not implemented.')
+        throw new ErrorServer('Method not implemented.')
     }
 }

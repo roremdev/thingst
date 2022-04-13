@@ -1,4 +1,4 @@
-import Error from '@controllers/Error.controller'
+import ErrorServer from '@controllers/ErrorServer.controller'
 import Model from '@models/Model'
 import { IDirection, Query, Payload } from './Direction.entity'
 
@@ -16,7 +16,7 @@ export default class Direction extends Model<IDirection, Query, Payload> {
      * @param {Query} {id} Direction ID.
      * @returns Direction. */
     async findUnique({ id }: Query): Promise<IDirection> {
-        return directions.find((direction) => direction.id === id)
+        return directions.find((direction) => direction.id === id) as IDirection
     }
     /**
      * @description Find pool of directions.
@@ -28,6 +28,6 @@ export default class Direction extends Model<IDirection, Query, Payload> {
      * @description Create a category.
      * @returns Direction. */
     async create(payload: Payload): Promise<IDirection> {
-        throw new Error('Method not implemented.')
+        throw new ErrorServer('Method not implemented.')
     }
 }

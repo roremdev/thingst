@@ -1,0 +1,27 @@
+name: Deploy to Google cloud
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    deploy-glcoud:
+        name: Deploying to Google Cloud
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
+
+        steps:
+            - name: ⚙️ Configure GitHub Actions
+              uses: actions/checkout@v3
+
+            - name: 🔒 Google Authentication
+              uses: 'google-github-actions/auth@v0'
+              with:
+                  workload_identity_provider: 'projects/473040113857/locations/global/workloadIdentityPools/github-identity-pool/providers/github-provider-pool'
+                  service_account: 'app-engine@mallery-347005.iam.gserviceaccount.com'
+
+            - name: 🚀 Deploy to App Engine
+              uses: 'google-github-actions/deploy-appengine@v0'

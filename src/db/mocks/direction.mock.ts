@@ -1,6 +1,6 @@
-import { Direction } from '@models/Direction/Direction.entity'
+import { IDirection } from '@models/Direction/Direction.entity'
 
-const directions: Direction[] = [
+const directions: IDirection[] = [
     {
         id: 1,
         firstName: 'Philippa',

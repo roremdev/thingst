@@ -16,7 +16,7 @@ export default class Product extends Model<IProduct, Query, Payload> {
      * @param {Query} {id} Product ID.
      * @returns Product. */
     async findUnique({ id }: Query): Promise<IProduct> {
-        return products.find((product) => product.id === id)
+        return products.find((product) => product.id === id) as IProduct
     }
     /**
      * @description Find pool of products.

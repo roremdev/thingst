@@ -1,6 +1,6 @@
-import { Category } from '@models/Category/Category.entity'
+import { ICategory } from '@models/Category/Category.entity'
 
-const categories: Category[] = [
+const categories: ICategory[] = [
     {
         id: 1,
         name: 'Books',

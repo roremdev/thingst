@@ -3,7 +3,7 @@ import { ApolloError } from 'apollo-server-errors'
 /**
  * @class ErrorServer
  * @description Error server logic */
-export default class Error extends ApolloError {
+export default class ErrorServer extends ApolloError {
     /**
      * @private
      * @description Dictionary of errors. */
@@ -38,6 +38,9 @@ export default class Error extends ApolloError {
      * @param {string=} type Error type; default SERVER.
      * @param {string} message Error trace message; default message SERVER. */
     constructor(type: string, message?: string) {
-        super(message || Error.#errors[type].message, Error.#errors[type].code)
+        super(
+            message || ErrorServer.#errors[type].message,
+            ErrorServer.#errors[type].code
+        )
     }
 }

@@ -24,7 +24,7 @@ const Global = {
         }
 
         type Query {
-            info: String!
+            project: String!
             categories: CategoriesResponse!
             product(id: ID!): ProductResponse!
             products(where: FindAnyProduct): ProductsResponse!
@@ -40,8 +40,8 @@ const Global = {
         ) on INPUT_FIELD_DEFINITION
     `,
     Query: {
-        info: () => {
-            info('GET /api')
+        project: () => {
+            info('GET /api/graphql')
             return '⬢ Thingst'
         },
         ...Account.Query,

@@ -1,10 +1,10 @@
-# node
+# Exclue server dependencies
 node_modules/
 dist/
 .env
-# git
+# Ignore husky hook
 .husky
-# os
+# Exclude OS files
 .DS_Store
-# docker
+# Exclude docker files
 docker/

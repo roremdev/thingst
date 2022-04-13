@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server'
 
-import { Filters } from '@libs/Prisma'
+import { IFilters } from '@libs/Prisma'
 
 import { Query, Payload } from '@models/Account/Account.entity'
 import AccountController from '@controllers/Account.contoller'
@@ -29,14 +29,18 @@ export default {
 
         extend type Query {
             account(id: ID!): Account!
-            accounts(skip: Int = 0, take: Int = 10, where: FilterAccount): [Account!]!
+            accounts(
+                skip: Int = 0
+                take: Int = 10
+                where: FilterAccount
+            ): [Account!]!
         }
     `,
     Query: {
         account: async (_: any, query: Query) => {
             return await accountController.findAccount(query)
         },
-        accounts: async (_: any, filters: Filters) => {
+        accounts: async (_: any, filters: IFilters) => {
             return await accountController.findAccounts(filters)
         },
     },
