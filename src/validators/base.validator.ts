@@ -1,4 +1,4 @@
-import Joi from 'Joi'
+import Joi from 'joi'
 
 export const email = Joi.string().email()
 export const password = Joi.string().min(6).max(30).messages({

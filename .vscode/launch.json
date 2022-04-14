@@ -23,7 +23,7 @@
             "name": "Jest debugger",
             "type": "node",
             "request": "launch",
-            "runtimeExecutable": "npm",
+            "runtimeExecutable": "pnpm",
             "runtimeArgs": ["run", "test"]
         }
     ]

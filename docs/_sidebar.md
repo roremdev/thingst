@@ -1,8 +1,0 @@
--   [Home](readme.md)
-    -   [Contributing](contributing.md 'First stepst for contribute')
-    -   [Change Log](changelog.md 'Changes log')
-    -   [Authors](authors.md 'Authors directory')
--   [Route API](routes/readme.md 'Route API')
-    -   [/api](routes/index.md 'Index')
--   [Models](models/readme.md 'Models')
-    -   [Health](models/health.md 'Health')

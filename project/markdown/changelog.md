@@ -6,19 +6,19 @@
 
 **✨ Added**
 
-- For new features.
+-   For new features.
 
 **♻️ Changed**
 
-- For changes in existing functionality.
+-   For changes in existing functionality.
 
 **🔥 Removed**
 
-- For now removed features.
+-   For now removed features.
 
 **🐛 Fixed**
 
-- For any bug fixes.
-  - A simple indentation
+-   For any bug fixes.
+    -   A simple indentation
 
 ---

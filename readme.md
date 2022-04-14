@@ -1,4 +1,4 @@
-<img src="./markdown/favicon.svg" alt="Logo" width="80" height="80" />
+<img src="./project/assets/favicon.svg" alt="Logo" width="80" height="80" />
 
 # Thingst
 
@@ -13,11 +13,11 @@ develop a backend with NodeJS and driver connection databases.
 
 The use for this project will depend on the use case:
 
-- For customize the integration project with CI environments (Heroku, AWS/GPC, etc).
-- For server a server done with MVC architecture.
-- Implementation of a simple API infrastructure (REST or GraphQL).
+-   For customize the integration project with CI environments (Heroku, AWS/GPC, etc).
+-   For server a server done with MVC architecture.
+-   Implementation of a simple API infrastructure (REST or GraphQL).
 
-> Note. This project is on https://thingst.herokuapp.com/
+> ⚠️ Note. This project is on https://thingst.herokuapp.com/
 
 ### 📦 Getting Started
 

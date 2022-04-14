@@ -1,0 +1,10 @@
+# Server dependencies
+node_modules/
+dist/
+
+# Environments
+.github/
+.vscode/
+
+# Others
+project/

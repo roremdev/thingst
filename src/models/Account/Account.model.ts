@@ -19,7 +19,7 @@ export default class Account extends Model<IAccount, Query, Payload> {
     async findUnique(query: Query): Promise<IAccount> {
         return await this.client.findUnique({
             where: query,
-            include: { directions: true }
+            include: { directions: true },
         })
     }
 
@@ -29,7 +29,7 @@ export default class Account extends Model<IAccount, Query, Payload> {
     async findMany(filter: Filter): Promise<IAccount[]> {
         return await this.client.findMany({
             include: { directions: true },
-            ...filter
+            ...filter,
         })
     }
 
@@ -38,7 +38,7 @@ export default class Account extends Model<IAccount, Query, Payload> {
      * @returns {Account} */
     async create(payload: Payload): Promise<IAccount> {
         return await this.client.create({
-            data: payload
+            data: payload,
         })
     }
 }

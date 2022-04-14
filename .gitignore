@@ -1,10 +1,15 @@
-# Exclue server dependencies
+# Server dependencies
 node_modules/
 dist/
 .env
-# Ignore husky hook
-.husky
+
+# Evinronment
+.idea/
+.vscode/
+.husky/
+
+# Others
+docker/
+
 # Exclude OS files
 .DS_Store
-# Exclude docker files
-docker/

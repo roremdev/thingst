@@ -1,4 +1,4 @@
-import Joi from 'Joi'
+import Joi from 'joi'
 
 import ErrorServer from '@controllers/ErrorServer.controller'
 
