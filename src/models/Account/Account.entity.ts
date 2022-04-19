@@ -4,5 +4,5 @@ export interface IAccount {
     password: string
 }
 
-export type Query = Pick<IAccount, 'id'>
+export type Query = Pick<IAccount, 'email'>
 export type Payload = Pick<IAccount, 'email' | 'password'>

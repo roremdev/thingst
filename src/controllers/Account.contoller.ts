@@ -1,8 +1,12 @@
-import ErrorServer from '@controllers/ErrorServer.controller'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
+import { JWT_TOKEN } from '@config/env'
+
+import ErrorServer from '@controllers/ErrorServer.controller'
+import { IFilters } from '@libs/Prisma'
 import Account from '@models/Account/Account.model'
 import { Query, Payload } from '@models/Account/Account.entity'
-import { IFilters } from '@libs/Prisma'
 
 export default class AccountController {
     private model = new Account()
@@ -12,7 +16,7 @@ export default class AccountController {
      * @returns Account */
     async findAccount(query: Query) {
         const account = await this.model.findUnique({
-            id: Number(query.id),
+            email: query.email,
         })
         if (!account) throw new ErrorServer('NOT_FOUND')
         return account
@@ -27,7 +31,11 @@ export default class AccountController {
      * @description Create an account.
      * @param {Payload} payload
      * @returns Account */
-    async createAccount(payload: Payload) {
-        return await this.model.create(payload)
+    async createAccount({ password, ...payload }: Payload) {
+        const account = await this.model.create({
+            password: bcrypt.hashSync(password, 3),
+            ...payload,
+        })
+        return { token: jwt.sign(account, JWT_TOKEN as string) }
     }
 }

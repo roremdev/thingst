@@ -11,6 +11,7 @@ server.set('version', version)
 
 server.listen(server.get('port'), () => {
     console.log(`⬢ Thingst - ${server.get('mode')}`)
-    console.log(`◌ Listening on ${server.get('url')}`)
+    console.log(`◌ Listening Express Server on ${server.get('url')}`)
+    console.log(`◌ Listening GraphQL Server on ${server.get('url')}/graphql`)
     console.log(`◌ v${server.get('version')}`)
 })

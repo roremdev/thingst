@@ -13,7 +13,7 @@ export default class Account extends Model<IAccount, Query, Payload> {
     }
 
     /**
-     * @description Find an account by id.
+     * @description Find an account by id or email.
      * @param {Query} query
      * @returns Account */
     async findUnique(query: Query): Promise<IAccount> {

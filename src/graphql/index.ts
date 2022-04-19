@@ -3,6 +3,7 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 import { merge } from 'lodash'
 
 import Account from './schema/Account.schema'
+import Auth from './schema/Auth.schema'
 import Category from './schema/Category.schema'
 import Direction from './schema/Direction.schema'
 import Order from './schema/Order.schema'
@@ -30,10 +31,6 @@ const Global = {
             products(where: FindAnyProduct): ProductsResponse!
         }
 
-        type Mutation {
-            createAccount(account: CreateAccount): Account
-        }
-
         directive @constraint(
             # String constraints
             minLength: Int
@@ -48,6 +45,7 @@ const Global = {
     },
     Mutation: {
         ...Account.Mutation,
+        ...Auth.Mutation,
     },
 }
 
@@ -55,6 +53,7 @@ export default makeExecutableSchema({
     typeDefs: [
         Global.Schema,
         Account.Schema,
+        Auth.Schema,
         Category.Schema,
         Direction.Schema,
         FulFillmentStatus.Schema,

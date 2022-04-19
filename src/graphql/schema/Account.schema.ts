@@ -1,9 +1,8 @@
 import { gql } from 'apollo-server'
 
-import { IFilters } from '@libs/Prisma'
-
-import { Query, Payload } from '@models/Account/Account.entity'
 import AccountController from '@controllers/Account.contoller'
+import { IFilters } from '@libs/Prisma'
+import { Query, Payload } from '@models/Account/Account.entity'
 import validate from '@validators/account.validator'
 
 const accountController = new AccountController()
@@ -28,12 +27,16 @@ export default {
         }
 
         extend type Query {
-            account(id: ID!): Account!
+            account(email: String!): Account!
             accounts(
                 skip: Int = 0
                 take: Int = 10
                 where: FilterAccount
             ): [Account!]!
+        }
+
+        type Mutation {
+            createAccount(account: CreateAccount): Account
         }
     `,
     Query: {
